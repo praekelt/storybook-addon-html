@@ -4,6 +4,10 @@
   "description": "Display the HTML of the story",
   "license": "MIT",
   "main": "lib/index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/praekelt/storybook-addon-html<Paste>"
+  },
   "scripts": {
     "prebuild": "rimraf lib",
     "build": "babel src --out-dir lib --ignore spec.js,test.js",
