@@ -1,0 +1,50 @@
+{
+  "name": "@prk/storybook-addon-html",
+  "version": "0.1.0",
+  "description": "Display the HTML of the story",
+  "license": "MIT",
+  "main": "lib/index.js",
+  "scripts": {
+    "prebuild": "rimraf lib",
+    "build": "babel src --out-dir lib --ignore spec.js,test.js",
+    "build:dev": "babel -w src --out-dir lib --ignore spec.js,test.js",
+    "format": "prettier --no-semi --single-quote --trailing-comma all --tab-width 2 --bracket-spacing true --print-width 100 --write 'src/**/*.js'",
+    "prepare": "npm run build",
+    "storybook": "start-storybook -p 9009 -c ./example/.storybook",
+    "test": "npm run test:all",
+    "test:all": "jest src",
+    "test:dev": "jest src --watch",
+    "netlify": "build-storybook -c ./example/.storybook"
+  },
+  "dependencies": {
+    "js-beautify": "^1.7.5",
+    "react-copy-to-clipboard": "^5.0.1",
+    "react-element-to-jsx-string": "^13.1.0"
+  },
+  "devDependencies": {
+    "@storybook/addon-options": "^3.3.3",
+    "@storybook/addon-storyshots": "^3.3.3",
+    "@storybook/addons": "^3.3.3",
+    "@storybook/channels": "^3.3.3",
+    "@storybook/react": "^3.3.3",
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.0",
+    "babel-jest": "^22.0.4",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-react": "^6.24.1",
+    "jest": "^22.0.4",
+    "npm-run-all": "^4.1.2",
+    "prettier": "^1.9.2",
+    "prop-types": "^15.6.0",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "react-test-renderer": "^16.2.0",
+    "rimraf": "^2.6.2"
+  },
+  "peerDependencies": {
+    "babel-core": "^6.26.0",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0"
+  }
+}
