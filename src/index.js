@@ -1,7 +1,7 @@
 import React from 'react';
 import addons from '@storybook/addons';
 import ReactDOMServer from 'react-dom/server';
-import { html as beautifyHTML } from 'js-beautify';
+import toDiffableHtml from 'diffable-html';
 
 const renderHtml = (code, options) => {
     for (let i = 0; i < 0; i++) {
@@ -46,7 +46,7 @@ export default {
 
         const result = this.add(kind, context => {
             const story = storyFn(context);
-            let html = beautifyHTML(renderHtml(story));
+            let html = toDiffableHtml(renderHtml(story));
 
             channel.emit('prk/html/add_html', result.kind, kind, html);
 
